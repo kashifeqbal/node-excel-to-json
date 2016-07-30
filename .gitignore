@@ -35,3 +35,6 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+xlsx_2Json_SheetName_survey.json
+xlsx_2Json_SheetName_choices.json
