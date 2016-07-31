@@ -1,18 +1,18 @@
 var chai = require('chai');
 var expect = chai.expect;
 var should = chai.should();
-var xls2Json = require('../src/main.js');
+var excel2Json = require('../src/main.js');
 var helper = require('../src/helper.js');
 describe('Excel_to_JSON', function() {
-    it('xls2Json() should return Error if relative file URL is incorrect', function(done) {
-        xls2Json('test/sample.xlsx', function(err, output) {
+    it('excel2Json() should return Error if relative file URL is incorrect', function(done) {
+        excel2Json('test/sample.xlsx', function(err, output) {
             expect(err).to.be.instanceof(Error);
             expect(output).to.be.undefined;
             done();
         });
     });
-    it('xls2Json() should return Object and Have SheetNames if relative file URL is correct', function(done) {
-        xls2Json('../test/sample.xls', function(err, output) {
+    it('excel2Json() should return Object and Have SheetNames if relative file URL is correct', function(done) {
+        excel2Json('../test/sample.xls', function(err, output) {
             expect(err).to.equal(null);
             expect(output).to.be.instanceof(Object);
             expect(output).to.have.property("survey");
@@ -21,8 +21,8 @@ describe('Excel_to_JSON', function() {
         });
     });
 
-    it('xls2Json() should work with argument default Options', function(done) {
-        xls2Json('../test/sample.xls', {
+    it('excel2Json() should work with argument default Options', function(done) {
+        excel2Json('../test/sample.xls', {
             'convert_all_sheet': true,
             'return_type': 'Object'
         }, function(err, output) {
@@ -37,8 +37,8 @@ describe('Excel_to_JSON', function() {
             done();
         });
     });
-    it("xls2Json() should save file with argument Options 'convert_all_sheet': true,'return_type': 'File'", function(done) {
-        xls2Json('../test/sample.xls', {
+    it("excel2Json() should save file with argument Options 'convert_all_sheet': true,'return_type': 'File'", function(done) {
+        excel2Json('../test/sample.xls', {
             'convert_all_sheet': true,
             'return_type': 'File'
         }, function(err, output) {
@@ -59,8 +59,8 @@ describe('Excel_to_JSON', function() {
             done();
         });
     });
-    it("xls2Json() should save file with argument Options 'convert_all_sheet': false,'return_type': 'File'", function(done) {
-        xls2Json('../test/sample.xls', {
+    it("excel2Json() should save file with argument Options 'convert_all_sheet': false,'return_type': 'File'", function(done) {
+        excel2Json('../test/sample.xls', {
             'convert_all_sheet': false,
             'return_type': 'File',
             'sheetName': 'survey'
@@ -76,8 +76,8 @@ describe('Excel_to_JSON', function() {
             done();
         });
     });
-    it("xls2Json() should save file with argument Options 'convert_all_sheet': false,'return_type': 'File'", function(done) {
-        xls2Json('../test/sample.xls', {
+    it("excel2Json() should save file with argument Options 'convert_all_sheet': false,'return_type': 'File'", function(done) {
+        excel2Json('../test/sample.xls', {
             'convert_all_sheet': false,
             'return_type': 'Object',
             'sheetName': 'survey'

@@ -8,7 +8,7 @@ var options = {
     sheetName: '' //Only if convert_all_sheet=false
 }
 
-function xls2Json(fileName, options, callback) {
+function excel2Json(fileName, options, callback) {
     if (typeof callback === 'undefined' && typeof options === 'function') {
         callback = options;
         options = {
@@ -119,4 +119,4 @@ function xls2Json(fileName, options, callback) {
         }
     }
 }
-module.exports = xls2Json;
+module.exports = excel2Json;
