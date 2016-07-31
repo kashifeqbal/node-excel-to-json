@@ -1,7 +1,7 @@
 {
   "name": "node-excel-to-json",
   "description": "convert a spread sheet into JSON into tabular form",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "src/main.js",
   "author": "Kashif Eqbal",
   "repository": {

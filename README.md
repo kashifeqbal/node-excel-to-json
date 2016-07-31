@@ -11,7 +11,7 @@ Supported read formats:
 
 ## Install
 
-    $ npm install excel2json
+    $ npm install node-excel-to-json
 
 ## Usage
 
@@ -43,6 +43,6 @@ excel2Json('../test/sample.xls', {
     'return_type': 'File',
     'sheetName': 'survey'
 }, function(err, output) {
-    
+
 });
 ```
